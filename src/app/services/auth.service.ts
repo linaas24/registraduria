@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -8,54 +8,73 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://TU_API/auth/login';  // Cambia cuando tengas API real
+  apiUri = 'https://api-departamento-defensa-production.up.railway.app';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  httpOptions = new HttpHeaders().set('Content-Type', 'application/json');
 
-  login(data: { usuario: string; password: string }): Observable<any> {
+  constructor(private http: HttpClient) {}
 
-    // 🔹 Usuario temporal para pruebas
-    const dummyUser = {
-      usuario: 'admin',
-      password: '1234',
-      token: 'tokenDemo123'
-    };
 
-    return new Observable(observer => {
 
-      console.log("Datos recibidos:", data);
-
-      // ✔️ Validación del usuario temporal
-      if (data.usuario === dummyUser.usuario && data.password === dummyUser.password) {
-
-        console.log("Login con dummy OK");
-
-        localStorage.setItem('token', dummyUser.token);
-        localStorage.setItem('usuario', JSON.stringify({ usuario: dummyUser.usuario }));
-
-        observer.next({ token: dummyUser.token });
-        observer.complete();
-        return;
-      }
-
-      // ✔️ Si no coincide, intenta login real
-      this.http.post(this.apiUrl, data).subscribe({
-        next: (resp: any) => {
-          localStorage.setItem('token', resp.token);
-          localStorage.setItem('usuario', JSON.stringify(resp.usuario));
-
-          observer.next(resp);
-          observer.complete();
-        },
-        error: err => observer.error(err)
+    loginUser(data: any): Observable<any> {
+      return this.http.post<any>(this.apiUri + '/api/auth/login', data, {
+        headers: this.httpOptions,
       });
-    });
-  }
+    }
+
+      registerUser(data: any): Observable<any> {
+      return this.http.post<any>(this.apiUri + '/api/auth/register', data, {
+        headers: this.httpOptions,
+      });
+    }
+
+      // //Comprobar si esta logeado o no
+      // loggedIn(): Boolean {
+      //   const token = Cookies.get('token');
+      //   if (token) {
+      //     return true;
+      //   }
+      //   return false;
+      // }
+
+  // login(data: { usuario: string; password: string }): Observable<any> {
+
+
+
+  //   return new Observable(observer => {
+
+  //     console.log("Datos recibidos:", data);
+
+  //     // ✔️ Validación del usuario temporal
+  //     if (data.usuario === dummyUser.usuario && data.password === dummyUser.password) {
+
+  //       console.log("Login con dummy OK");
+
+  //       localStorage.setItem('token', dummyUser.token);
+  //       localStorage.setItem('usuario', JSON.stringify({ usuario: dummyUser.usuario }));
+
+  //       observer.next({ token: dummyUser.token });
+  //       observer.complete();
+  //       return;
+  //     }
+
+  //     // ✔️ Si no coincide, intenta login real
+  //     this.http.post(this.apiUrl, data).subscribe({
+  //       next: (resp: any) => {
+  //         localStorage.setItem('token', resp.token);
+  //         localStorage.setItem('usuario', JSON.stringify(resp.usuario));
+
+  //         observer.next(resp);
+  //         observer.complete();
+  //       },
+  //       error: err => observer.error(err)
+  //     });
+  //   });
+  // }
 
   logout() {
     localStorage.removeItem('token');
-    localStorage.removeItem('usuario');
-    this.router.navigate(['/login']);
+
   }
 
   isLogged(): boolean {

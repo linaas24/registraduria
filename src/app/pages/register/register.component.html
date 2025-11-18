@@ -1,0 +1,112 @@
+<div class="login-container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img
+      src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1P1JdMjM-6N30U4v3_mazL1M4hyyS4QPhvhncofFUl96P3NVn4fFHNVNwm90bet5MtM3HQvWQHFT3xWcCTeoHUxxJGGoV7UnOYUOdRpT9imwPO4NtLexhNbM9PXJY02hJckyGAK1ZLLOm5ARrQe_k4jWdEzvHAnw9f0Gw3ouGyWI9h8wbV6wnJvn4vjVjJ5bE0q379dh7h_wSzGWu6y74yY6B4R0y8qLNjC99I00pMfq-St2pTVEY-QGdx6ANQKdYARJQ8APUVWg"
+      class="logo"
+    />
+
+    <h1 class="title">Registro de Usuario</h1>
+    <p class="subtitle">Fuerza Pública de Colombia</p>
+  </div>
+
+  <!-- CARD -->
+  <div class="card">
+
+    <!-- Identificación -->
+    <label class="label">Número de Identificación</label>
+    <div class="input">
+      <span class="material-icons input-icon">badge</span>
+      <input type="text" placeholder="Ingrese su número"
+             [(ngModel)]="register.identificacion" />
+    </div>
+
+    <!-- Nombres -->
+    <label class="label">Nombres</label>
+    <div class="input">
+      <span class="material-icons input-icon">person</span>
+      <input type="text" placeholder="Ingrese sus nombres"
+             [(ngModel)]="register.nombres" />
+    </div>
+
+    <!-- Apellidos -->
+    <label class="label">Apellidos</label>
+    <div class="input">
+      <span class="material-icons input-icon">person</span>
+      <input type="text" placeholder="Ingrese sus apellidos"
+             [(ngModel)]="register.apellidos" />
+    </div>
+
+    <!-- Fuerza -->
+    <label class="label">Fuerza a la que pertenece</label>
+    <div class="select">
+      <span class="material-icons input-icon">security</span>
+      <select [(ngModel)]="register.fuerzaPublica">
+        <option value="">Seleccione una fuerza</option>
+        <option value="POLICIA">Policía Nacional</option>
+        <option value="EJERCITO">Ejército Nacional</option>
+        <option value="ARMADA">Armada Nacional</option>
+        <option value="FUERZA_AEREA">Fuerza Aérea</option>
+      </select>
+      <span class="material-icons select-arrow">arrow_drop_down</span>
+    </div>
+
+    <!-- Rango -->
+    <label class="label">Rango</label>
+    <div class="select">
+      <span class="material-icons input-icon">military_tech</span>
+      <select [(ngModel)]="register.rango">
+        <option value="">Seleccione un rango</option>
+        <option value="GENERAL">General</option>
+        <option value="MAYOR_GENERAL">Mayor General</option>
+        <option value="BRIGADIER_GENERAL">Brigadier General</option>
+        <option value="CORONEL">Coronel</option>
+        <option value="TENIENTE_CORONEL">Teniente Coronel</option>
+        <option value="MAYOR">Mayor</option>
+        <option value="CAPITAN">Capitán</option>
+        <option value="TENIENTE">Teniente</option>
+        <option value="SUBTENIENTE">Subteniente</option>
+        <option value="PATRULLERO">Patrullero</option>
+      </select>
+      <span class="material-icons select-arrow">arrow_drop_down</span>
+    </div>
+
+    <!-- ID Fuerza -->
+    <label class="label">ID de Fuerza / Placa</label>
+    <div class="input">
+      <span class="material-icons input-icon">pin</span>
+      <input type="text" placeholder="Ingrese ID de fuerza o placa"
+             [(ngModel)]="register.idFuerza" />
+    </div>
+
+    <!-- Email -->
+    <label class="label">Correo Institucional</label>
+    <div class="input">
+      <span class="material-icons input-icon">mail</span>
+      <input type="email" placeholder="usuario@institucion.mil.co"
+             [(ngModel)]="register.email" />
+    </div>
+
+    <!-- BOTÓN -->
+    <button class="btn-primary" (click)="handleRegister()">
+      <span class="material-icons">how_to_reg</span>
+      Registrarse
+    </button>
+
+    <!-- Ya tiene cuenta -->
+    <div class="register">
+      <span>¿Ya tiene una cuenta?</span>
+      <button class="link" (click)="goToLogin()">Inicie sesión aquí</button>
+    </div>
+
+    <!-- Info Box -->
+    <div class="info-box">
+      <span class="material-icons">info</span>
+      <p>
+        Recibirá un correo con su contraseña generada automáticamente.
+      </p>
+    </div>
+
+  </div>
+</div>

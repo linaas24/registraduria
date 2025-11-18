@@ -1,0 +1,186 @@
+:root {
+  --primary: #0d2a4c;
+  --text-dark: #000000;
+  --border: #d1d5db;
+  --placeholder: #9ca3af;
+}
+
+.login-container {
+  min-height: 100vh;
+  background: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  background-color: #10365f;
+  width: 100%;
+  height: 300px;
+}
+
+.logo {
+  width: 95px;
+  height: 95px;
+}
+
+.title {
+  margin-top: 12px;
+  font-size: 26px;
+  color: white;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 4px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* CARD */
+.card {
+  position: relative;
+  z-index: 10;
+  width: 95%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  margin-top: -50px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Labels */
+.label {
+  font-size: 14px;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Inputs */
+.input {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border: 2px solid #d1d5db;   /* borde gris suave */
+  border-radius: 12px;
+  padding: 13px;
+  margin-bottom: 16px;
+  color: black;
+
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* animación */
+}
+
+/* Animación cuando el input está activo */
+.input:focus-within {
+  border-color: #2563eb; /* azul */
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+}
+
+.input-icon {
+  margin-right: 8px;
+  font-size: 22px;
+  color: var(--placeholder);
+}
+
+.input input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: var(--text-dark);
+}
+
+/* Select */
+.select {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 4px 8px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.select select {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px;
+  background: none;
+  font-size: 15px;
+  color: var(--text-dark);
+  appearance: none;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  color: var(--placeholder);
+}
+
+/* Botón */
+.btn-primary {
+  width: 100%;
+  background: #10365f;
+  color: white;
+  padding: 13px;
+  border-radius: 12px;
+  border: none;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover {
+  background: #194b7a;
+}
+
+/* Footer register */
+.register {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Info box */
+.info-box {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(13, 42, 76, 0.1);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.info-box p {
+  font-size: 13px;
+  color: var(--primary);
+  margin: 0;
+}
+
+

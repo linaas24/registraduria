@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+       "target": "https://api-departamento-defensa-production.up.railway.app",
+        "secure": false,
+       "changeOrigin": true
+       }
+   }
+       
