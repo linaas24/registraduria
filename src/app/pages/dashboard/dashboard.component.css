@@ -1,0 +1,133 @@
+/* ======= ESTILO GENERAL ======= */
+body {
+  background: #f5f7fa;
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* ======= TARJETAS SUPERIORES ======= */
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #ffffff;
+  padding: 25px;
+  width: 280px;
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: 15px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.card .value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ======= CONTENEDOR PRINCIPAL ======= */
+.dashboard-content {
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+/* ======= CAJA IZQUIERDA ======= */
+.left-box {
+  width: 280px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.left-box h3 {
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.left-box .value {
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+/* ======= TABLA RECIENTES ======= */
+.right-box {
+  flex: 1;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.right-box h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #111827;
+  font-weight: 600;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th {
+  text-align: left;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+table td {
+  padding: 12px 0;
+  font-size: 15px;
+  color: #374151;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* ======= ESTADOS ======= */
+.verified {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.pending {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.rejected {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* ======= AVATAR PEQUEÑO (si lo deseas después) ======= */
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}

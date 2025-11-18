@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #f7f9fc;
+  border-right: 1px solid #e5e7eb;
+}
+
+.content {
+  background: #f9fafb;
+  height: 100vh;
+  overflow-y: auto;
+}

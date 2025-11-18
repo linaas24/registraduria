@@ -1,0 +1,38 @@
+.citizens-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  .citizens-table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+  }
+  
+  .citizens-table thead {
+    background: #1a1a1a;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .citizens-table th,
+  .citizens-table td {
+    padding: 14px 18px;
+    vertical-align: middle;
+    font-size: 15px;
+  }
+  
+  .citizens-table tbody tr:hover {
+    background: #f5f7fa;
+  }
+  
+  .badge {
+    font-size: 13px;
+  }
+  
+  .btn-primary {
+    border-radius: 8px;
+  }
+  

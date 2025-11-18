@@ -1,0 +1,48 @@
+/* Contenedor estilo tarjeta */
+.citizens-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Tabla visualmente más moderna */
+  .citizens-table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+  }
+  
+  .citizens-table thead {
+    background: #1a1a1a;
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .citizens-table th,
+  .citizens-table td {
+    padding: 14px 18px;
+    vertical-align: middle;
+    font-size: 15px;
+  }
+  
+  /* Filas con hover suavizado */
+  .citizens-table tbody tr:hover {
+    background: #f5f7fa;
+  }
+  
+  /* Botón actualizar estado */
+  .citizens-table button {
+    border-radius: 6px;
+  }
+  
+  /* Badge del estado */
+  .badge {
+    font-size: 13px;
+  }
+  
+  /* Sombra suave para los botones superiores */
+  .btn-primary {
+    border-radius: 8px;
+  }
+  
