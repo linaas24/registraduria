@@ -1,0 +1,93 @@
+/* Contenedor general */
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  animation: fadeSlide 0.6s ease-out;
+}
+
+/* Tarjeta */
+.card {
+  width: 100%;
+  max-width: 550px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0px 8px 20px rgba(11, 46, 89, 0.2);
+  border-left: 8px solid #0b2e59;
+}
+
+/* Título */
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0b2e59;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Inputs */
+.form-group {
+  margin-bottom: 20px;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+label {
+  font-weight: 600;
+  color: #0b2e59;
+}
+
+.form-control {
+  width: 100%;
+  border: 2px solid #bccbe1;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.form-control:focus {
+  border-color: #0b2e59;
+  box-shadow: 0px 0px 8px rgba(11, 46, 89, 0.3);
+}
+
+/* Botón */
+.btn-guardar {
+  width: 100%;
+  padding: 14px;
+  background: #0b2e59;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s ease;
+  animation: fadeIn 1s ease;
+}
+
+.btn-guardar:hover {
+  background: #0d3a6d;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 18px rgba(11, 46, 89, 0.35);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

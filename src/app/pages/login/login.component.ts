@@ -79,6 +79,7 @@ login() {
 
          if (response.token) {
         localStorage.setItem('token', response.token);
+          this.router.navigate(['/dashboard']);
         }
       },
       

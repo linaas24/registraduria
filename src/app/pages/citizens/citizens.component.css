@@ -1,48 +1,178 @@
-/* Contenedor estilo tarjeta */
+/* --- Tarjeta principal --- */
 .citizens-card {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  }
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  border-left: 8px solid #0b2e59;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Título azul elegante */
+.text-primary-title {
+  color: #0b2e59;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* --- Contenedor de tabla con borde azul y sombra --- */
+.table-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #dce3ec;
+  box-shadow: 0px 4px 12px rgba(11, 46, 89, 0.15);
+}
+
+/* --- Tabla --- */
+.citizens-table {
+  margin: 0;
+  border-collapse: collapse;
+}
+
+/* Encabezado azul oscuro */
+.citizens-table thead {
+  background-color: #0b2e59;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.citizens-table th,
+.citizens-table td {
+  padding: 16px 18px;
+  font-size: 15px;
+  vertical-align: middle;
+  border-bottom: 1px solid #edf1f5;
+}
+
+/* Hover moderno */
+.citizens-table tbody tr:hover {
+  background: #e9f1fb;
+  transition: 0.25s ease;
+}
+
+/* --- Badge Estado --- */
+.estado-activo {
+  background: #0d6efd;
+  color: #fff;
+}
+
+.estado-inactivo {
+  background: #dc3545;
+  color: #fff;
+}
+
+/* --- Botón Cambiar estado --- */
+.btn-estado {
+  background-color: #0b2e59;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: 0.25s ease;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(11, 46, 89, 0.25);
+}
+
+.btn-estado:hover {
+  background-color: #0d3b74;
+  box-shadow: 0 4px 8px rgba(11, 46, 89, 0.35);
+}
+
+/* --- Animación suave --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card_citizenz{
+  padding-top: 30px;
   
-  /* Tabla visualmente más moderna */
-  .citizens-table {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    border: none;
-  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: flex-end; /* 🔥 todo alineado a la derecha */
+  width: 100%;
+}
+
+/* Search Input Styling */
+.search-wrapper {
+  position: relative;
+  width: 350px;
+}
+.btn-light {
+  padding: 10px 22px;
+  border-radius: 10px;
+  background-color: #eef2f6;
+  color: #0b2e59;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.search-wrapper input {
+  width: 100%;
+  height: 45px;
+  border-radius: 10px !important;
+  border: 1px solid #e0e0e0;
+  background: #f9f9f9;
+  padding-left: 40px;
+  font-size: 14px;
+  outline: none;
+}
+
+.reporte{
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+}
+.requerido{
+  padding: 10px;
+  background-color: #0b2e59 !important;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.requerido:hover{
+  background-color: #0d3b74;
+}
+
+.search-wrapper .material-icons-outlined {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  border: none;
+  background-color: #f9f9f9;
+}
+
+.search-wrapper #search_id {
+  position: absolute;
+  right: -290px;   /* 👉 lo pone a la derecha */
+  top: 50%;
   
-  .citizens-table thead {
-    background: #1a1a1a;
-    color: #fff;
-    font-weight: 600;
-  }
-  
-  .citizens-table th,
-  .citizens-table td {
-    padding: 14px 18px;
-    vertical-align: middle;
-    font-size: 15px;
-  }
-  
-  /* Filas con hover suavizado */
-  .citizens-table tbody tr:hover {
-    background: #f5f7fa;
-  }
-  
-  /* Botón actualizar estado */
-  .citizens-table button {
-    border-radius: 6px;
-  }
-  
-  /* Badge del estado */
-  .badge {
-    font-size: 13px;
-  }
-  
-  /* Sombra suave para los botones superiores */
-  .btn-primary {
-    border-radius: 8px;
-  }
-  
+  color: #999;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.btn-icon {
+  background: #fff;
+  border: 1px solid #eee;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

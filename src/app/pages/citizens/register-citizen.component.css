@@ -1,28 +1,38 @@
-.card {
-    background: #fff;
-    border-radius: 16px;
-  }
-  
-  h5 {
-    color: #333;
-  }
-  
-  .form-label {
-    font-weight: 500;
-    color: #555;
-  }
-  
-  input, select {
-    height: 45px;
-    border-radius: 10px !important;
-  }
-  
-  .btn-primary {
-    padding: 10px 22px;
-    border-radius: 10px;
-  }
-  
-  .btn-light {
-    padding: 10px 22px;
-    border-radius: 10px;
-  }
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animated-card {
+  animation: cardEnter 0.5s ease;
+}
+
+@keyframes cardEnter {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.text-primary {
+  color: #0d47a1 !important;
+}
+
+.btn-primary {
+  background-color: #0d47a1;
+  border-color: #0d47a1;
+}
+
+.btn-primary:hover {
+  background-color: #093170;
+}
+
+/* 🚀 La raya azul */
+ #card_register{
+  width: 100%;
+
+  box-shadow: 0px 8px 20px rgba(11, 46, 89, 0.2) !important;
+  border-left: 8px solid #0b2e59 !important;
+}

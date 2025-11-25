@@ -13,22 +13,29 @@
 
     <nav class="sidebar-nav">
       <ul>
-        <li class="active">
-          <a href="#"><span class="material-icons-outlined">dashboard</span> Panel</a>
-        </li>
-        <li>
-        <a href="#"><span class="material-icons-outlined">badge</span> Ciudadanos</a>
+          <li [class.active]="currentView === 'panel'">
+        <a (click)="setView('panel')">
+          <span class="material-icons-outlined">dashboard</span> Panel
+        </a>
       </li>
 
-        <li>
-          <a href="#"><span class="material-icons-outlined">groups</span> Registro de Ciudadanos</a>
-        </li>
-        <li>
-          <a href="#"><span class="material-icons-outlined">bar_chart</span> Reportes</a>
-        </li>
-        <li>
-          <a href="#"><span class="material-icons-outlined">analytics</span> Analíticas</a>
-        </li>
+      <li [class.active]="currentView === 'ciudadanos'">
+        <a (click)="setView('ciudadanos')">
+          <span class="material-icons-outlined">badge</span> Ciudadanos
+        </a>
+      </li>
+
+      <li [class.active]="currentView === 'registrar'">
+        <a (click)="setView('registrar')">
+          <span class="material-icons-outlined">groups</span> Registro de Ciudadanos
+        </a>
+      </li>
+      <li [class.active]="currentView === 'registrar_antecedentes'">
+        <a (click)="setView('registrar_antecedentes')">
+           <span class="material-icons-outlined">fact_check</span> Registro Antecedentes
+        </a>
+      </li>
+
         <li>
           <a href="#"><span class="material-icons-outlined">manage_accounts</span> Gestión de Usuarios</a>
         </li>
@@ -39,9 +46,11 @@
           <li>
             <a href="#"><span class="material-icons-outlined">settings</span> Configuración</a>
           </li>
-          <li>
-            <a href="#"><span class="material-icons-outlined">logout</span> Cerrar Sesión</a>
-          </li>
+            <li>
+            <a (click)="logout()" style="cursor:pointer;">
+              <span class="material-icons-outlined">logout</span> Cerrar Sesión
+          </a>
+        </li>
         </ul>
       </div>
     </nav>
@@ -58,8 +67,7 @@
       
       <div class="header-actions">
         <div class="search-wrapper">
-          <span class="material-icons-outlined">search</span>
-          <input type="text" placeholder="Buscar ciudadano por nombre o identificación...">
+     
         </div>
         <button class="btn-icon"><span class="material-icons-outlined">notifications</span></button>
         <img src="https://i.pravatar.cc/150?img=11" alt="Admin" class="avatar-sm">
@@ -76,16 +84,25 @@
           <p class="subtitle">Aquí tienes un resumen del sistema de registro ciudadano.</p>
         </div>
         <div class="action-buttons">
-          <button class="btn btn-light">
-            <span class="material-icons-outlined">file_download</span> Exportar Reporte
-          </button>
-          <button class="btn btn-primary">
+          
+
+
+          <button class="btn btn-primary" (click)="setView('registrar')">
             <span class="material-icons-outlined">add</span> Agregar Nuevo Ciudadano
           </button>
         </div>
       </div>
 
-      <app-analitics-board></app-analitics-board>
+            <!-- PANEL -->
+      <app-analitics-board *ngIf="currentView === 'panel'"></app-analitics-board>
+
+      <!-- CIUDADANOS -->
+      <app-citizens *ngIf="currentView === 'ciudadanos'"></app-citizens>
+
+      <!-- REGISTRO CIUDADANOS -->
+      <app-register-citizen *ngIf="currentView === 'registrar'"></app-register-citizen>
+
+      <app-create-background *ngIf="currentView === 'registrar_antecedentes'"></app-create-background>
 
 
 
